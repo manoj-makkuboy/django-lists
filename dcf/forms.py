@@ -4,6 +4,17 @@ from django.utils.translation import ugettext as _
 
 from dcf.models import Item, Group, Image, CustomUser
 
+# django-registration app integration
+from registration.forms import RegistrationForm
+
+
+
+
+class MyCustomUserForm(RegistrationForm):
+    class Meta:
+        model = CustomUser
+        fields = ('phone','receive_news','first_name','last_name','username','is_active','user_email')
+
 
 class SearchForm(forms.Form):
     group = forms.ModelChoiceField(label=_('Group'), queryset=Group.objects.all(), required=False)

@@ -10,9 +10,13 @@ from django.utils.translation import ugettext as _
 from django.contrib.auth.models import AbstractUser
 
 
+
+
 class CustomUser(AbstractUser):
     phone = models.CharField(_('phone'), max_length=30, null=True, blank=True)
     receive_news = models.BooleanField(_('receive news'), default=True, db_index=True)
+    user_email = models.EmailField(_('user email'),null = True,)
+
 
     def allow_add_item(self):
         if self.item_set.count() > settings.DCF_ITEM_PER_USER_LIMIT:

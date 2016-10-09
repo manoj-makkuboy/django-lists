@@ -10,6 +10,12 @@ from django.conf.urls.static import static
 from dcf import views, feeds, sitemap
 from dcf.api.routers import router
 
+#django-registration imports
+
+from registration.backends.hmac.views import RegistrationView
+
+from dcf.forms import MyCustomUserForm
+
 admin.autodiscover()
 
 urlpatterns = [
@@ -41,6 +47,16 @@ urlpatterns = [
     url(r'^api/', include(router.urls)),
 
     url(r'^admin/', include(admin.site.urls)),
+
+    # django-registration
+     url(r'^accounts/register/$',
+        RegistrationView.as_view(
+            form_class=MyCustomUserForm
+        ),
+        name='registration_register',
+    ),
+    url(r'^accounts/', include('registration.backends.hmac.urls')),
+
 ]
 
 handler404 = views.page404

@@ -13,7 +13,8 @@ from django.views.generic.edit import FormMixin
 from django.conf import settings
 
 from dcf.models import Item, Image, Group, Section
-from dcf.forms import ItemCreateEditForm, ProfileForm, SearchForm
+from dcf.forms import ItemCreateEditForm, ProfileForm, SearchForm, MyCustomUserForm
+
 
 
 class FilteredListView(FormMixin, ListView):
@@ -209,6 +210,10 @@ class ProfileView(UpdateView):
 class RobotsView(TemplateView):
     template_name = 'robots.txt'
     content_type = 'text/plain'
+
+
+
+
 
 
 def page403(request):

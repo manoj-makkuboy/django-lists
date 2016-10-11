@@ -18,6 +18,9 @@ class CustomUser(AbstractUser):
     user_email = models.EmailField(_('user email'),null = True,)
 
 
+
+
+
     def allow_add_item(self):
         if self.item_set.count() > settings.DCF_ITEM_PER_USER_LIMIT:
             return False

@@ -13,7 +13,7 @@ from registration.forms import RegistrationForm
 class MyCustomUserForm(RegistrationForm):
     class Meta:
         model = CustomUser
-        fields = ('phone','receive_news','first_name','last_name','username','is_active','user_email')
+        fields = ('phone','receive_news','first_name','last_name','username','email','is_active',)
 
 
 class SearchForm(forms.Form):

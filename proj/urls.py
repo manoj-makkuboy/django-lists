@@ -57,6 +57,11 @@ urlpatterns = [
     ),
     url(r'^accounts/', include('registration.backends.hmac.urls')),
 
+    url(r'^activate/(?P<activation_key>)/$',
+                   'activate',
+                   {'backend': 'registration.backends.default.DefaultBackend'},
+                   name='registration_activate'),
+
 ]
 
 handler404 = views.page404

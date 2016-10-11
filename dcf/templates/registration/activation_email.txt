@@ -1,1 +1,3 @@
 {{ activation_key }}
+
+website :  {{site}}

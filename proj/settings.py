@@ -232,6 +232,8 @@ ACCOUNT_ACTIVATION_DAYS = 7 # for django-regitration
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
+# SMTP settings
+
 EMAIL_USE_TLS = True
 
 EMAIL_HOST = 'smtp.sendgrid.net'
@@ -239,3 +241,4 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = '' # sendgrid username goes here
 EMAIL_HOST_PASSWORD = '' # sendgrid password goes here
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+

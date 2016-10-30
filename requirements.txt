@@ -8,4 +8,3 @@ djangorestframework>=3.3,<3.4
 django-filter>=0.13,<0.14
 django-cors-headers>=1.1,<1.2
 django-registration==2.1.2
-
